@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lettres Arabes - Fatha</title>
+
+<style>
+
+body {
+  margin:0;
+  font-family: Arial;
+  text-align: center;
+  background: #000;
+  color: white;
+  position: relative;
+}
+
+/* Fond */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../../assets/images/islam-bg.jpg") no-repeat center/cover;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+h1 {
+  margin-top: 25px;
+}
+
+/* Grille */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+  gap: 15px;
+  margin: 25px;
+}
+
+/* Cartes lettres */
+.card {
+  background: white;
+  color: black;
+  font-size: 42px;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition:0.2s;
+}
+
+.card:active {
+  transform: scale(0.95);
+  background: #ffeaa7;
+}
+
+/* Bouton retour */
+.back{
+  display:inline-block;
+  background:#000;
+  color:white;
+  padding:12px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  margin:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>📖 Lettres avec la Fatha</h1>
+<p>Clique sur une lettre pour écouter</p>
+
+<div class="grid" id="letters"></div>
+
+<a href="index.html" class="back">⬅ Retour Fatha</a>
+
+<script>
+
+/* ================= DONNÉES AUDIO ================= */
+
+const letters = [
+
+  {char:"اَ", start:0.8, duration:0.8},
+  {char:"بَ", start:1.6, duration:0.8},
+  {char:"تَ", start:2.4, duration:0.8},
+  {char:"ثَ", start:3.2, duration:0.8},
+  {char:"جَ", start:3.9, duration:1.0},
+  {char:"حَ", start:4.9, duration:1.0},
+  {char:"خَ", start:5.8, duration:0.9},
+  {char:"دَ", start:6.6, duration:1.0},
+  {char:"ذَ", start:7.4, duration:1.0},
+  {char:"رَ", start:8.4, duration:1.0},
+  {char:"زَ", start:9.3, duration:1.0},
+  {char:"سَ", start:10,  duration:1.2},
+  {char:"شَ", start:11.0,duration:1.0},
+  {char:"صَ", start:11.8,duration:1.0},
+  {char:"ضَ", start:12.8,duration:1.0},
+  {char:"طَ", start:13.8,duration:1.0},
+  {char:"ظَ", start:14.8,duration:1.0},
+  {char:"عَ", start:15.5,duration:1.0},
+  {char:"غَ", start:16.3,duration:1.0},
+  {char:"فَ", start:17.3,duration:1.0},
+  {char:"قَ", start:18.0,duration:1.0},
+  {char:"كَ", start:19.0,duration:1.0},
+  {char:"لَ", start:19.8,duration:1.0},
+  {char:"مَ", start:20.6,duration:1.0},
+  {char:"نَ", start:21.8,duration:0.8},
+  {char:"هَ", start:22.5,duration:1.0},
+  {char:"وَ", start:23.5,duration:1.0},
+  {char:"يَ", start:24.3,duration:1.0}
+
+];
+
+
+/* ================= RENDU ================= */
+
+const container = document.getElementById("letters");
+
+letters.forEach(letter => {
+
+  const div = document.createElement("div");
+  div.className = "card";
+  div.textContent = letter.char;
+
+  div.onclick = () => {
+
+    const audio = new Audio("../../assets/audio/fatha.mp3");
+
+    audio.currentTime = letter.start;
+    audio.play();
+
+    setTimeout(() => {
+      audio.pause();
+    }, letter.duration * 1000);
+
+  };
+
+  container.appendChild(div);
+
+});
+
+</script>
+
+</body>
+</html>
