@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exercice Fatha 4</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+
+<style>
+
+/* === IDENTIQUE À EXERCICE 3 === */
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  text-align:center;
+  background:#fff;
+}
+
+.band{
+  background:#000;
+  color:white;
+  max-width:700px;
+  margin:25px auto;
+  padding:20px;
+  border-radius:15px;
+
+  display:grid;
+  grid-template-columns:1fr 60px;
+  align-items:center;
+}
+
+.table-line{
+  display:flex;
+  gap:15px;
+  direction:rtl;
+  justify-content:center;
+}
+
+.group{
+  display:flex;
+  gap:10px;
+  background:rgba(255,255,255,0.08);
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.3);
+}
+
+.letters{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  direction:rtl;
+}
+
+.letter{
+  position:relative;
+  font-family:"Amiri", serif;
+  font-size:55px;
+  width:45px;
+  height:65px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.base{
+  position:relative;
+  z-index:2;
+}
+
+.haraka{
+  position:absolute;
+  top:-10px;
+  font-size:30px;
+  z-index:3;
+}
+
+.letter.active{
+  background:#ffeaa7;
+  color:black;
+  font-weight:bold;
+}
+
+.play{
+  background:transparent;
+  border:2px solid white;
+  color:white;
+  border-radius:8px;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.play:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+@media (max-width: 450px){
+
+  .letter{
+    font-size:30px;
+    width:26px;
+    height:40px;
+  }
+
+  .haraka{
+    font-size:18px;
+    top:-5px;
+  }
+
+  .group{
+    gap:4px;
+    padding:4px 6px;
+  }
+
+  .table-line{
+    gap:6px;
+  }
+
+  .letters{
+    gap:6px;
+  }
+
+  .play{
+    font-size:12px;
+    padding:3px 5px;
+  }
+
+  .band{
+    padding:8px;
+  }
+
+  h1{
+    font-size:22px;
+  }
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("../../assets/images/islam-bg.jpg") no-repeat center/cover;
+  opacity:0.15;
+  z-index:-1;
+}
+/* ===== NAVIGATION EXERCICES TEXTE ===== */
+
+.nav-ex{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin:25px auto;
+}
+
+.nav-arrow{
+  background:#000;
+  color:white;
+  padding:10px 18px;
+  border-radius:10px;
+  font-size:26px;
+  text-decoration:none;
+  font-weight:bold;
+  transition:0.2s;
+}
+
+.nav-arrow:hover{
+  background:#222;
+  transform:scale(1.1);
+}
+
+.nav-title{
+  font-size:20px;
+  font-weight:bold;
+  min-width:140px;
+  text-align:center;
+}
+ /* ===== NAVIGATION HAUTE ===== */
+.nav-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 20px;
+}
+
+.back-btn,
+.home-btn{
+  background:#000;
+  color:white;
+  padding:8px 16px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:15px;
+  transition:0.2s;
+}
+
+.back-btn:hover,
+.home-btn:hover{
+  background:#222;
+  transform:scale(1.05);
+}
+</style>
+</head>
+
+<body>
+<!-- /* ===== NAVIGATION HAUTE ===== */ -->
+  <div class="nav-top">
+
+  <a href="index.html" class="back-btn">
+    ⬅ Fatha
+  </a>
+
+  <a href="../../index.html" class="home-btn">
+    🏠 Accueil
+  </a>
+
+</div>
+<div class="nav-ex">
+
+  <a href="ex3.html" class="nav-arrow">❮</a>
+
+  <span class="nav-title">📝 Exercice 4</span>
+
+  <a href="ex5.html" class="nav-arrow">❯</a>
+
+</div>
+
+<!-- ===== BANDEAUX ===== -->
+
+<div class="band"><div class="letters" id="band1"></div><button class="play" onclick="playLine('band1')">▶</button></div>
+<div class="band"><div class="letters" id="band2"></div><button class="play" onclick="playLine('band2')">▶</button></div>
+<div class="band"><div class="letters" id="band3"></div><button class="play" onclick="playLine('band3')">▶</button></div>
+<div class="band"><div class="letters" id="band4"></div><button class="play" onclick="playLine('band4')">▶</button></div>
+<div class="band"><div class="letters" id="band5"></div><button class="play" onclick="playLine('band5')">▶</button></div>
+<div class="band"><div class="letters" id="band6"></div><button class="play" onclick="playLine('band6')">▶</button></div>
+<div class="band"><div class="letters" id="band7"></div><button class="play" onclick="playLine('band7')">▶</button></div>
+<div class="band"><div class="letters" id="band8"></div><button class="play" onclick="playLine('band8')">▶</button></div>
+<div class="band"><div class="letters" id="band9"></div><button class="play" onclick="playLine('band9')">▶</button></div>
+<div class="band"><div class="letters" id="band10"></div><button class="play" onclick="playLine('band10')">▶</button></div>
+<div class="band"><div class="letters" id="band11"></div><button class="play" onclick="playLine('band11')">▶</button></div>
+<div class="band"><div class="letters" id="band12"></div><button class="play" onclick="playLine('band12')">▶</button></div>
+
+<script>
+
+/* ================= AUDIO ================= */
+
+const audio = new Audio("../../assets/audio/fatha.mp3");
+let timer = null;
+
+
+/* ================= SONS ================= */
+
+const sounds = {
+  "ا": { start:0.8, d:0.8 },
+  "ب": { start:1.6, d:0.8 },
+  "ت": { start:2.4, d:0.8 },
+  "ث": { start:3.2, d:0.8 },
+  "ج": { start:4.0, d:0.8 },
+  "ح": { start:4.8, d:0.8 },
+  "خ": { start:5.6, d:0.8 },
+  "د": { start:6.4, d:0.8 }
+};
+
+
+/* ================= DONNÉES ================= */
+/* À modifier librement */
+
+const band1Data = ["خ","ح"];
+
+const band2Data = [
+"خ","ح","خ","ح","ح","خ","خ","ح","خ","ح"
+];
+
+const band3Data = [
+  "ب","ب","خ","ت","ت","ح","ث","ب","خ"
+];
+
+const band4Data = [
+  "ث","ث","ح","خ","خ","ج","ب","ب","ح"
+];
+
+const band5Data = [
+  "ث","ب","خ","ح","ح","ا","ا","ب","خ"
+];
+
+const band6Data = [
+  "ب","ج","ح","ب","ب","خ","ج","ج","ح"
+];
+
+const band7Data = [
+  "ا","ب","خ","ت","ت","ح","خ","خ","ج"
+];
+
+const band8Data = [
+  "ب","ب","ح","ث","ب","خ","ث","ث","ح"
+];
+
+const band9Data = [
+  "خ","خ","ج","ح","ح","ا","ب","ب","خ"
+];
+
+const band10Data = [
+  "ج","ج","ح","ح","ح","ا","ب","ب","خ"
+];
+
+const band11Data = [
+  "ب","ب","ج","ح","ج","ب","ث","ب","خ"
+];
+
+const band12Data = [
+  "خ","ح","ج","ث","ت","ب","ا"
+];
+
+
+/* ================= RENDU ================= */
+
+function renderLine(containerId, data){
+
+  const box = document.getElementById(containerId);
+  box.innerHTML = "";
+
+  const bandNumber = parseInt(containerId.replace("band",""));
+
+  if(bandNumber >= 3){
+
+    const tableWrap = document.createElement("div");
+    tableWrap.className = "table-line";
+
+    const groups = [];
+
+    for(let i=0; i<data.length; i+=3){
+      groups.push(data.slice(i,i+3));
+    }
+
+    groups.reverse().forEach(groupData=>{
+
+      const groupDiv = document.createElement("div");
+      groupDiv.className = "group";
+
+      groupData.reverse().forEach(letter=>{
+
+        const wrap = document.createElement("div");
+        wrap.className = "letter";
+
+        const base = document.createElement("span");
+        base.className = "base";
+        base.textContent = letter;
+
+        const haraka = document.createElement("span");
+        haraka.className = "haraka";
+        haraka.textContent = "َ";
+
+        wrap.appendChild(base);
+        wrap.appendChild(haraka);
+        groupDiv.appendChild(wrap);
+
+      });
+
+      tableWrap.appendChild(groupDiv);
+
+    });
+
+    box.appendChild(tableWrap);
+
+  }
+
+  else{
+
+    data.slice().reverse().forEach(letter=>{
+
+      const wrap = document.createElement("div");
+      wrap.className = "letter";
+
+      const base = document.createElement("span");
+      base.className = "base";
+      base.textContent = letter;
+
+      const haraka = document.createElement("span");
+      haraka.className = "haraka";
+      haraka.textContent = "َ";
+
+      wrap.appendChild(base);
+      wrap.appendChild(haraka);
+      box.appendChild(wrap);
+
+    });
+
+  }
+
+}
+
+
+/* Affichage */
+
+renderLine("band1", band1Data);
+renderLine("band2", band2Data);
+renderLine("band3", band3Data);
+renderLine("band4", band4Data);
+renderLine("band5", band5Data);
+renderLine("band6", band6Data);
+renderLine("band7", band7Data);
+renderLine("band8", band8Data);
+renderLine("band9", band9Data);
+renderLine("band10", band10Data);
+renderLine("band11", band11Data);
+renderLine("band12", band12Data);
+
+
+/* ================= PLAYER ================= */
+
+function stop(){
+
+  audio.pause();
+  audio.currentTime = 0;
+
+  if(timer){
+    clearTimeout(timer);
+    timer=null;
+  }
+
+  document
+    .querySelectorAll(".letter")
+    .forEach(l=>l.classList.remove("active"));
+}
+
+
+function playLine(containerId){
+
+  stop();
+
+  const letters =
+    document.getElementById(containerId)
+    .querySelectorAll(".letter");
+
+  let i = 0;
+
+  function playNext(){
+
+    if(i >= letters.length) return;
+
+    letters.forEach(l=>l.classList.remove("active"));
+
+    const current = letters[i];
+    const base = current.querySelector(".base").textContent;
+
+    current.classList.add("active");
+
+    const data = sounds[base];
+
+    audio.currentTime = data.start;
+    audio.play();
+
+    const duration = (data.d + 0.15) * 1000;
+
+    timer = setTimeout(()=>{
+
+      audio.pause();
+      current.classList.remove("active");
+
+      i++;
+
+      timer = setTimeout(playNext, 300);
+
+    }, duration);
+  }
+
+  playNext();
+}
+
+</script>
+
+</body>
+</html>
