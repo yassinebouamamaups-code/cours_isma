@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les 99 Noms d’Allah</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: white;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("islam-bg.jpg") no-repeat center/cover;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+header {
+  padding: 60px 20px 30px;
+}
+
+h1 {
+  font-size: 36px;
+  color: #000000;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #000000;
+}
+
+.name-card {
+  background: #000000;
+  color: white;
+  margin: 22px auto;
+  padding: 22px;
+  border-radius: 18px;
+  max-width: 650px;
+}
+
+.phonetic {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.arabic {
+  font-size: 36px;
+  margin: 10px 0;
+  font-family: "Amiri", serif;
+}
+
+button {
+  background: transparent;
+  color: white;
+
+  border: 2px solid white;      /* Cadre */
+  padding: 10px 20px;
+  border-radius: 12px;
+
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bold;
+
+  transition: all 0.25s ease;
+  box-shadow: 0 0 0 rgba(255,255,255,0);
+}
+
+/* Survol */
+button:hover {
+  background: rgba(255,255,255,0.15);
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+  transform: scale(1.05);
+}
+
+/* Clic */
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 4px rgba(255,255,255,0.8);
+}
+
+/* Focus clavier (accessibilité) */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 12px rgba(255,255,255,0.9);
+}
+
+footer {
+  margin: 60px 0 20px;
+  font-size: 14px;
+  color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🌙 Les 99 Noms d’Allah</h1>
+  <div class="subtitle">Écouter et mémoriser</div>
+</header>
+
+<!-- 🔁 MODÈLE RÉPÉTÉ 99 FOIS -->
+
+<div class="name-card"><div class="phonetic">Ar-Rahmān</div><div class="arabic">الرَّحْمَٰن</div><button onclick="a1.play()">🔊 Écouter</button><audio id="a1" src="01-ar-rahman.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Ar-Rahīm</div><div class="arabic">الرَّحِيم</div><button onclick="a2.play()">🔊 Écouter</button><audio id="a2" src="02-ar-rahim.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-Malik</div><div class="arabic">الْمَلِك</div><button onclick="a3.play()">🔊 Écouter</button><audio id="a3" src="03-al-malik.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-Quddūs</div><div class="arabic">الْقُدُّوس</div><button onclick="a4.play()">🔊 Écouter</button><audio id="a4" src="04-al-quddus.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">As-Salām</div><div class="arabic">السَّلَام</div><button onclick="a5.play()">🔊 Écouter</button><audio id="a5" src="05-as-salam.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-Mu’min</div><div class="arabic">الْمُؤْمِن</div><button onclick="a6.play()">🔊 Écouter</button><audio id="a6" src="06-al-mumin.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-Muhaymin</div><div class="arabic">الْمُهَيْمِن</div><button onclick="a7.play()">🔊 Écouter</button><audio id="a7" src="07-al-muhaymin.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-‘Azīz</div><div class="arabic">الْعَزِيز</div><button onclick="a8.play()">🔊 Écouter</button><audio id="a8" src="08-al-aziz.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-Jabbār</div><div class="arabic">الْجَبَّار</div><button onclick="a9.play()">🔊 Écouter</button><audio id="a9" src="09-al-jabbar.mp3"></audio></div>
+<div class="name-card"><div class="phonetic">Al-Mutakabbir</div><div class="arabic">الْمُتَكَبِّر</div><button onclick="a10.play()">🔊 Écouter</button><audio id="a10" src="10-al-mutakabbir.mp3"></audio></div>
+<!-- 11 -->
+<div class="name-card">
+  <div class="phonetic">Al-Khāliq</div>
+  <div class="arabic">الْخَالِق</div>
+  <button onclick="a11.play()">🔊 Écouter</button>
+  <audio id="a11" src="audio/11-al-khaliq.mp3"></audio>
+</div>
+
+<!-- 12 -->
+<div class="name-card">
+  <div class="phonetic">Al-Bāri’</div>
+  <div class="arabic">الْبَارِئ</div>
+  <button onclick="a12.play()">🔊 Écouter</button>
+  <audio id="a12" src="audio/12-al-bari.mp3"></audio>
+</div>
+
+<!-- 13 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muṣawwir</div>
+  <div class="arabic">الْمُصَوِّر</div>
+  <button onclick="a13.play()">🔊 Écouter</button>
+  <audio id="a13" src="audio/13-al-musawwir.mp3"></audio>
+</div>
+
+<!-- 14 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ghaffār</div>
+  <div class="arabic">الْغَفَّار</div>
+  <button onclick="a14.play()">🔊 Écouter</button>
+  <audio id="a14" src="audio/14-al-ghaffar.mp3"></audio>
+</div>
+
+<!-- 15 -->
+<div class="name-card">
+  <div class="phonetic">Al-Qahhār</div>
+  <div class="arabic">الْقَهَّار</div>
+  <button onclick="a15.play()">🔊 Écouter</button>
+  <audio id="a15" src="audio/15-al-qahhar.mp3"></audio>
+</div>
+
+<!-- 16 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wahhāb</div>
+  <div class="arabic">الْوَهَّاب</div>
+  <button onclick="a16.play()">🔊 Écouter</button>
+  <audio id="a16" src="audio/16-al-wahhab.mp3"></audio>
+</div>
+
+<!-- 17 -->
+<div class="name-card">
+  <div class="phonetic">Ar-Razzāq</div>
+  <div class="arabic">الرَّزَّاق</div>
+  <button onclick="a17.play()">🔊 Écouter</button>
+  <audio id="a17" src="audio/17-ar-razzaq.mp3"></audio>
+</div>
+
+<!-- 18 -->
+<div class="name-card">
+  <div class="phonetic">Al-Fattāḥ</div>
+  <div class="arabic">الْفَتَّاح</div>
+  <button onclick="a18.play()">🔊 Écouter</button>
+  <audio id="a18" src="audio/18-al-fattah.mp3"></audio>
+</div>
+
+<!-- 19 -->
+<div class="name-card">
+  <div class="phonetic">Al-‘Alīm</div>
+  <div class="arabic">الْعَلِيم</div>
+  <button onclick="a19.play()">🔊 Écouter</button>
+  <audio id="a19" src="audio/19-al-alim.mp3"></audio>
+</div>
+
+<!-- 20 -->
+<div class="name-card">
+  <div class="phonetic">Al-Qābiḍ</div>
+  <div class="arabic">الْقَابِض</div>
+  <button onclick="a20.play()">🔊 Écouter</button>
+  <audio id="a20" src="audio/20-al-qabid.mp3"></audio>
+</div>
+<!-- 21 -->
+<div class="name-card">
+  <div class="phonetic">Al-Bāsit</div>
+  <div class="arabic">الْبَاسِط</div>
+  <button onclick="a21.play()">🔊 Écouter</button>
+  <audio id="a21" src="21-al-basit.mp3"></audio>
+</div>
+
+<!-- 22 -->
+<div class="name-card">
+  <div class="phonetic">Al-Khāfiḍ</div>
+  <div class="arabic">الْخَافِض</div>
+  <button onclick="a22.play()">🔊 Écouter</button>
+  <audio id="a22" src="22-al-khafid.mp3"></audio>
+</div>
+
+<!-- 23 -->
+<div class="name-card">
+  <div class="phonetic">Ar-Rāfi‘</div>
+  <div class="arabic">الرَّافِع</div>
+  <button onclick="a23.play()">🔊 Écouter</button>
+  <audio id="a23" src="23-ar-rafi.mp3"></audio>
+</div>
+
+<!-- 24 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mu‘izz</div>
+  <div class="arabic">الْمُعِزّ</div>
+  <button onclick="a24.play()">🔊 Écouter</button>
+  <audio id="a24" src="24-al-muizz.mp3"></audio>
+</div>
+
+<!-- 25 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mudhill</div>
+  <div class="arabic">الْمُذِلّ</div>
+  <button onclick="a25.play()">🔊 Écouter</button>
+  <audio id="a25" src="25-al-mudhill.mp3"></audio>
+</div>
+
+<!-- 26 -->
+<div class="name-card">
+  <div class="phonetic">As-Samī‘</div>
+  <div class="arabic">السَّمِيع</div>
+  <button onclick="a26.play()">🔊 Écouter</button>
+  <audio id="a26" src="26-as-sami.mp3"></audio>
+</div>
+
+<!-- 27 -->
+<div class="name-card">
+  <div class="phonetic">Al-Baṣīr</div>
+  <div class="arabic">الْبَصِير</div>
+  <button onclick="a27.play()">🔊 Écouter</button>
+  <audio id="a27" src="27-al-basir.mp3"></audio>
+</div>
+
+<!-- 28 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥakam</div>
+  <div class="arabic">الْحَكَم</div>
+  <button onclick="a28.play()">🔊 Écouter</button>
+  <audio id="a28" src="28-al-hakam.mp3"></audio>
+</div>
+
+<!-- 29 -->
+<div class="name-card">
+  <div class="phonetic">Al-‘Adl</div>
+  <div class="arabic">الْعَدْل</div>
+  <button onclick="a29.play()">🔊 Écouter</button>
+  <audio id="a29" src="29-al-adl.mp3"></audio>
+</div>
+
+<!-- 30 -->
+<div class="name-card">
+  <div class="phonetic">Al-Laṭīf</div>
+  <div class="arabic">اللَّطِيف</div>
+  <button onclick="a30.play()">🔊 Écouter</button>
+  <audio id="a30" src="30-al-latif.mp3"></audio>
+</div>
+<!-- 31 -->
+<div class="name-card">
+  <div class="phonetic">Al-Khabīr</div>
+  <div class="arabic">الْخَبِير</div>
+  <button onclick="a31.play()">🔊 Écouter</button>
+  <audio id="a31" src="31-al-khabir.mp3"></audio>
+</div>
+
+<!-- 32 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥalīm</div>
+  <div class="arabic">الْحَلِيم</div>
+  <button onclick="a32.play()">🔊 Écouter</button>
+  <audio id="a32" src="32-al-halim.mp3"></audio>
+</div>
+
+<!-- 33 -->
+<div class="name-card">
+  <div class="phonetic">Al-‘Aẓīm</div>
+  <div class="arabic">الْعَظِيم</div>
+  <button onclick="a33.play()">🔊 Écouter</button>
+  <audio id="a33" src="33-al-azim.mp3"></audio>
+</div>
+
+<!-- 34 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ghafūr</div>
+  <div class="arabic">الْغَفُور</div>
+  <button onclick="a34.play()">🔊 Écouter</button>
+  <audio id="a34" src="34-al-ghafur.mp3"></audio>
+</div>
+
+<!-- 35 -->
+<div class="name-card">
+  <div class="phonetic">Ash-Shakūr</div>
+  <div class="arabic">الشَّكُور</div>
+  <button onclick="a35.play()">🔊 Écouter</button>
+  <audio id="a35" src="35-ash-shakur.mp3"></audio>
+</div>
+
+<!-- 36 -->
+<div class="name-card">
+  <div class="phonetic">Al-‘Aliyy</div>
+  <div class="arabic">الْعَلِيّ</div>
+  <button onclick="a36.play()">🔊 Écouter</button>
+  <audio id="a36" src="36-al-aliyy.mp3"></audio>
+</div>
+
+<!-- 37 -->
+<div class="name-card">
+  <div class="phonetic">Al-Kabīr</div>
+  <div class="arabic">الْكَبِير</div>
+  <button onclick="a37.play()">🔊 Écouter</button>
+  <audio id="a37" src="37-al-kabir.mp3"></audio>
+</div>
+
+<!-- 38 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥafīẓ</div>
+  <div class="arabic">الْحَفِيظ</div>
+  <button onclick="a38.play()">🔊 Écouter</button>
+  <audio id="a38" src="38-al-hafiz.mp3"></audio>
+</div>
+
+<!-- 39 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muqīt</div>
+  <div class="arabic">الْمُقِيت</div>
+  <button onclick="a39.play()">🔊 Écouter</button>
+  <audio id="a39" src="39-al-muqit.mp3"></audio>
+</div>
+
+<!-- 40 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥasīb</div>
+  <div class="arabic">الْحَسِيب</div>
+  <button onclick="a40.play()">🔊 Écouter</button>
+  <audio id="a40" src="40-al-hasib.mp3"></audio>
+</div>
+
+<!-- 41 -->
+<div class="name-card">
+  <div class="phonetic">Al-Jalīl</div>
+  <div class="arabic">الْجَلِيل</div>
+  <button onclick="a41.play()">🔊 Écouter</button>
+  <audio id="a41" src="41-al-jalil.mp3"></audio>
+</div>
+
+<!-- 42 -->
+<div class="name-card">
+  <div class="phonetic">Al-Karīm</div>
+  <div class="arabic">الْكَرِيم</div>
+  <button onclick="a42.play()">🔊 Écouter</button>
+  <audio id="a42" src="42-al-karim.mp3"></audio>
+</div>
+
+<!-- 43 -->
+<div class="name-card">
+  <div class="phonetic">Ar-Raqīb</div>
+  <div class="arabic">الرَّقِيب</div>
+  <button onclick="a43.play()">🔊 Écouter</button>
+  <audio id="a43" src="43-ar-raqib.mp3"></audio>
+</div>
+
+<!-- 44 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mujīb</div>
+  <div class="arabic">الْمُجِيب</div>
+  <button onclick="a44.play()">🔊 Écouter</button>
+  <audio id="a44" src="44-al-mujib.mp3"></audio>
+</div>
+
+<!-- 45 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wāsi‘</div>
+  <div class="arabic">الْوَاسِع</div>
+  <button onclick="a45.play()">🔊 Écouter</button>
+  <audio id="a45" src="45-al-wasi.mp3"></audio>
+</div>
+
+<!-- 46 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥakīm</div>
+  <div class="arabic">الْحَكِيم</div>
+  <button onclick="a46.play()">🔊 Écouter</button>
+  <audio id="a46" src="46-al-hakim.mp3"></audio>
+</div>
+
+<!-- 47 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wadūd</div>
+  <div class="arabic">الْوَدُود</div>
+  <button onclick="a47.play()">🔊 Écouter</button>
+  <audio id="a47" src="47-al-wadud.mp3"></audio>
+</div>
+
+<!-- 48 -->
+<div class="name-card">
+  <div class="phonetic">Al-Majīd</div>
+  <div class="arabic">الْمَجِيد</div>
+  <button onclick="a48.play()">🔊 Écouter</button>
+  <audio id="a48" src="48-al-majid.mp3"></audio>
+</div>
+
+<!-- 49 -->
+<div class="name-card">
+  <div class="phonetic">Al-Bā‘ith</div>
+  <div class="arabic">الْبَاعِث</div>
+  <button onclick="a49.play()">🔊 Écouter</button>
+  <audio id="a49" src="49-al-baith.mp3"></audio>
+</div>
+
+<!-- 50 -->
+<div class="name-card">
+  <div class="phonetic">Ash-Shahīd</div>
+  <div class="arabic">الشَّهِيد</div>
+  <button onclick="a50.play()">🔊 Écouter</button>
+  <audio id="a50" src="50-ash-shahid.mp3"></audio>
+</div>
+<!-- 51 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥaqq</div>
+  <div class="arabic">الْحَقّ</div>
+  <button onclick="a51.play()">🔊 Écouter</button>
+  <audio id="a51" src="51-al-haqq.mp3"></audio>
+</div>
+
+<!-- 52 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wakīl</div>
+  <div class="arabic">الْوَكِيل</div>
+  <button onclick="a52.play()">🔊 Écouter</button>
+  <audio id="a52" src="52-al-wakil.mp3"></audio>
+</div>
+
+<!-- 53 -->
+<div class="name-card">
+  <div class="phonetic">Al-Qawiyy</div>
+  <div class="arabic">الْقَوِيّ</div>
+  <button onclick="a53.play()">🔊 Écouter</button>
+  <audio id="a53" src="53-al-qawiyy.mp3"></audio>
+</div>
+
+<!-- 54 -->
+<div class="name-card">
+  <div class="phonetic">Al-Matīn</div>
+  <div class="arabic">الْمَتِين</div>
+  <button onclick="a54.play()">🔊 Écouter</button>
+  <audio id="a54" src="54-al-matin.mp3"></audio>
+</div>
+
+<!-- 55 -->
+<div class="name-card">
+  <div class="phonetic">Al-Waliyy</div>
+  <div class="arabic">الْوَلِيّ</div>
+  <button onclick="a55.play()">🔊 Écouter</button>
+  <audio id="a55" src="55-al-waliyy.mp3"></audio>
+</div>
+
+<!-- 56 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥamīd</div>
+  <div class="arabic">الْحَمِيد</div>
+  <button onclick="a56.play()">🔊 Écouter</button>
+  <audio id="a56" src="56-al-hamid.mp3"></audio>
+</div>
+
+<!-- 57 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muḥṣī</div>
+  <div class="arabic">الْمُحْصِي</div>
+  <button onclick="a57.play()">🔊 Écouter</button>
+  <audio id="a57" src="57-al-muhsi.mp3"></audio>
+</div>
+
+<!-- 58 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mubdi’</div>
+  <div class="arabic">الْمُبْدِئ</div>
+  <button onclick="a58.play()">🔊 Écouter</button>
+  <audio id="a58" src="58-al-mubdi.mp3"></audio>
+</div>
+
+<!-- 59 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mu‘īd</div>
+  <div class="arabic">الْمُعِيد</div>
+  <button onclick="a59.play()">🔊 Écouter</button>
+  <audio id="a59" src="59-al-muid.mp3"></audio>
+</div>
+
+<!-- 60 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muḥyī</div>
+  <div class="arabic">الْمُحْيِي</div>
+  <button onclick="a60.play()">🔊 Écouter</button>
+  <audio id="a60" src="60-al-muhyi.mp3"></audio>
+</div>
+<!-- 61 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mumīt</div>
+  <div class="arabic">الْمُمِيت</div>
+  <button onclick="a61.play()">🔊 Écouter</button>
+  <audio id="a61" src="61-al-mumit.mp3"></audio>
+</div>
+
+<!-- 62 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ḥayy</div>
+  <div class="arabic">الْحَيّ</div>
+  <button onclick="a62.play()">🔊 Écouter</button>
+  <audio id="a62" src="62-al-hayy.mp3"></audio>
+</div>
+
+<!-- 63 -->
+<div class="name-card">
+  <div class="phonetic">Al-Qayyūm</div>
+  <div class="arabic">الْقَيُّوم</div>
+  <button onclick="a63.play()">🔊 Écouter</button>
+  <audio id="a63" src="63-al-qayyum.mp3"></audio>
+</div>
+
+<!-- 64 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wājid</div>
+  <div class="arabic">الْوَاجِد</div>
+  <button onclick="a64.play()">🔊 Écouter</button>
+  <audio id="a64" src="64-al-wajid.mp3"></audio>
+</div>
+
+<!-- 65 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mājid</div>
+  <div class="arabic">الْمَاجِد</div>
+  <button onclick="a65.play()">🔊 Écouter</button>
+  <audio id="a65" src="65-al-majid2.mp3"></audio>
+</div>
+
+<!-- 66 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wāḥid</div>
+  <div class="arabic">الْوَاحِد</div>
+  <button onclick="a66.play()">🔊 Écouter</button>
+  <audio id="a66" src="66-al-wahid.mp3"></audio>
+</div>
+
+<!-- 67 -->
+<div class="name-card">
+  <div class="phonetic">Aṣ-Ṣamad</div>
+  <div class="arabic">الصَّمَد</div>
+  <button onclick="a67.play()">🔊 Écouter</button>
+  <audio id="a67" src="67-as-samad.mp3"></audio>
+</div>
+
+<!-- 68 -->
+<div class="name-card">
+  <div class="phonetic">Al-Qādir</div>
+  <div class="arabic">الْقَادِر</div>
+  <button onclick="a68.play()">🔊 Écouter</button>
+  <audio id="a68" src="68-al-qadir.mp3"></audio>
+</div>
+
+<!-- 69 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muqtadir</div>
+  <div class="arabic">الْمُقْتَدِر</div>
+  <button onclick="a69.play()">🔊 Écouter</button>
+  <audio id="a69" src="69-al-muqtadir.mp3"></audio>
+</div>
+
+<!-- 70 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muqaddim</div>
+  <div class="arabic">الْمُقَدِّم</div>
+  <button onclick="a70.play()">🔊 Écouter</button>
+  <audio id="a70" src="70-al-muqaddim.mp3"></audio>
+</div> 
+
+<!-- 71 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mu’akhkhir</div>
+  <div class="arabic">الْمُؤَخِّر</div>
+  <button onclick="a71.play()">🔊 Écouter</button>
+  <audio id="a71" src="71-al-muakhkhir.mp3"></audio>
+</div>
+
+<!-- 72 -->
+<div class="name-card">
+  <div class="phonetic">Al-Awwal</div>
+  <div class="arabic">الأوّل</div>
+  <button onclick="a72.play()">🔊 Écouter</button>
+  <audio id="a72" src="72-al-awwal.mp3"></audio>
+</div>
+
+<!-- 73 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ākhir</div>
+  <div class="arabic">الآخِر</div>
+  <button onclick="a73.play()">🔊 Écouter</button>
+  <audio id="a73" src="73-al-akhir.mp3"></audio>
+</div>
+
+<!-- 74 -->
+<div class="name-card">
+  <div class="phonetic">Aẓ-Ẓāhir</div>
+  <div class="arabic">الظَّاهِر</div>
+  <button onclick="a74.play()">🔊 Écouter</button>
+  <audio id="a74" src="74-az-zahir.mp3"></audio>
+</div>
+
+<!-- 75 -->
+<div class="name-card">
+  <div class="phonetic">Al-Bāṭin</div>
+  <div class="arabic">الْبَاطِن</div>
+  <button onclick="a75.play()">🔊 Écouter</button>
+  <audio id="a75" src="75-al-batin.mp3"></audio>
+</div>
+
+<!-- 76 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wālī</div>
+  <div class="arabic">الْوَالِي</div>
+  <button onclick="a76.play()">🔊 Écouter</button>
+  <audio id="a76" src="76-al-wali.mp3"></audio>
+</div>
+
+<!-- 77 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muta‘ālī</div>
+  <div class="arabic">الْمُتَعَالِي</div>
+  <button onclick="a77.play()">🔊 Écouter</button>
+  <audio id="a77" src="77-al-mutaali.mp3"></audio>
+</div>
+
+<!-- 78 -->
+<div class="name-card">
+  <div class="phonetic">Al-Barr</div>
+  <div class="arabic">الْبَرّ</div>
+  <button onclick="a78.play()">🔊 Écouter</button>
+  <audio id="a78" src="78-al-barr.mp3"></audio>
+</div>
+
+<!-- 79 -->
+<div class="name-card">
+  <div class="phonetic">At-Tawwāb</div>
+  <div class="arabic">التَّوَّاب</div>
+  <button onclick="a79.play()">🔊 Écouter</button>
+  <audio id="a79" src="79-at-tawwab.mp3"></audio>
+</div>
+
+<!-- 80 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muntaqim</div>
+  <div class="arabic">الْمُنْتَقِم</div>
+  <button onclick="a80.play()">🔊 Écouter</button>
+  <audio id="a80" src="80-al-muntaqim.mp3"></audio>
+</div>
+<!-- 81 -->
+<div class="name-card">
+  <div class="phonetic">Al-‘Afuww</div>
+  <div class="arabic">الْعَفُوّ</div>
+  <button onclick="a81.play()">🔊 Écouter</button>
+  <audio id="a81" src="81-al-afuw.mp3"></audio>
+</div>
+
+<!-- 82 -->
+<div class="name-card">
+  <div class="phonetic">Ar-Ra’ūf</div>
+  <div class="arabic">الرَّؤُوف</div>
+  <button onclick="a82.play()">🔊 Écouter</button>
+  <audio id="a82" src="82-ar-rauf.mp3"></audio>
+</div>
+
+<!-- 83 -->
+<div class="name-card">
+  <div class="phonetic">Mālik-ul-Mulk</div>
+  <div class="arabic">مَالِكُ الْمُلْك</div>
+  <button onclick="a83.play()">🔊 Écouter</button>
+  <audio id="a83" src="83-malik-ul-mulk.mp3"></audio>
+</div>
+
+<!-- 84 -->
+<div class="name-card">
+  <div class="phonetic">Dhū-l-Jalāli wa-l-Ikrām</div>
+  <div class="arabic">ذُو الْجَلَالِ وَالإِكْرَام</div>
+  <button onclick="a84.play()">🔊 Écouter</button>
+  <audio id="a84" src="84-dhul-jalali.mp3"></audio>
+</div>
+
+<!-- 85 -->
+<div class="name-card">
+  <div class="phonetic">Al-Muqsiṭ</div>
+  <div class="arabic">الْمُقْسِط</div>
+  <button onclick="a85.play()">🔊 Écouter</button>
+  <audio id="a85" src="85-al-muqsit.mp3"></audio>
+</div>
+
+<!-- 86 -->
+<div class="name-card">
+  <div class="phonetic">Al-Jāmi‘</div>
+  <div class="arabic">الْجَامِع</div>
+  <button onclick="a86.play()">🔊 Écouter</button>
+  <audio id="a86" src="86-al-jami.mp3"></audio>
+</div>
+
+<!-- 87 -->
+<div class="name-card">
+  <div class="phonetic">Al-Ghaniyy</div>
+  <div class="arabic">الْغَنِيّ</div>
+  <button onclick="a87.play()">🔊 Écouter</button>
+  <audio id="a87" src="87-al-ghaniyy.mp3"></audio>
+</div>
+
+<!-- 88 -->
+<div class="name-card">
+  <div class="phonetic">Al-Mughnī</div>
+  <div class="arabic">الْمُغْنِي</div>
+  <button onclick="a88.play()">🔊 Écouter</button>
+  <audio id="a88" src="88-al-mughni.mp3"></audio>
+</div>
+
+<!-- 89 -->
+<div class="name-card">
+  <div class="phonetic">Al-Māni‘</div>
+  <div class="arabic">الْمَانِع</div>
+  <button onclick="a89.play()">🔊 Écouter</button>
+  <audio id="a89" src="89-al-mani.mp3"></audio>
+</div>
+
+<!-- 90 -->
+<div class="name-card">
+  <div class="phonetic">Aḍ-Ḍārr</div>
+  <div class="arabic">الضَّارّ</div>
+  <button onclick="a90.play()">🔊 Écouter</button>
+  <audio id="a90" src="90-ad-darr.mp3"></audio>
+</div>
+
+<!-- 91 -->
+<div class="name-card">
+  <div class="phonetic">An-Nāfi‘</div>
+  <div class="arabic">النَّافِع</div>
+  <button onclick="a91.play()">🔊 Écouter</button>
+  <audio id="a91" src="91-an-nafi.mp3"></audio>
+</div>
+
+<!-- 92 -->
+<div class="name-card">
+  <div class="phonetic">An-Nūr</div>
+  <div class="arabic">النُّور</div>
+  <button onclick="a92.play()">🔊 Écouter</button>
+  <audio id="a92" src="92-an-nur.mp3"></audio>
+</div>
+
+<!-- 93 -->
+<div class="name-card">
+  <div class="phonetic">Al-Hādī</div>
+  <div class="arabic">الْهَادِي</div>
+  <button onclick="a93.play()">🔊 Écouter</button>
+  <audio id="a93" src="93-al-hadi.mp3"></audio>
+</div>
+
+<!-- 94 -->
+<div class="name-card">
+  <div class="phonetic">Al-Badī‘</div>
+  <div class="arabic">الْبَدِيع</div>
+  <button onclick="a94.play()">🔊 Écouter</button>
+  <audio id="a94" src="94-al-badi.mp3"></audio>
+</div>
+
+<!-- 95 -->
+<div class="name-card">
+  <div class="phonetic">Al-Bāqī</div>
+  <div class="arabic">الْبَاقِي</div>
+  <button onclick="a95.play()">🔊 Écouter</button>
+  <audio id="a95" src="95-al-baqi.mp3"></audio>
+</div>
+
+<!-- 96 -->
+<div class="name-card">
+  <div class="phonetic">Al-Wārith</div>
+  <div class="arabic">الْوَارِث</div>
+  <button onclick="a96.play()">🔊 Écouter</button>
+  <audio id="a96" src="96-al-warith.mp3"></audio>
+</div>
+
+<!-- 97 -->
+<div class="name-card">
+  <div class="phonetic">Ar-Rashīd</div>
+  <div class="arabic">الرَّشِيد</div>
+  <button onclick="a97.play()">🔊 Écouter</button>
+  <audio id="a97" src="97-ar-rashid.mp3"></audio>
+</div>
+
+<!-- 98 -->
+<div class="name-card">
+  <div class="phonetic">Aṣ-Ṣabūr</div>
+  <div class="arabic">الصَّبُور</div>
+  <button onclick="a98.play()">🔊 Écouter</button>
+  <audio id="a98" src="98-as-sabur.mp3"></audio>
+</div>
+
+<!-- 99 -->
+<div class="name-card">
+  <div class="phonetic">Allah</div>
+  <div class="arabic">الله</div>
+  <button onclick="a99.play()">🔊 Écouter</button>
+  <audio id="a99" src="99-allah.mp3"></audio>
+</div>
+
+<footer>
+  © 2026 – Cours d’arabe
+</footer>
+
+</body>
+</html>
