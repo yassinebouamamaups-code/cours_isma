@@ -72,7 +72,7 @@ body::before{
   display:grid;
   grid-template-columns:1fr 50px;
   box-sizing:border-box;
-  overflow:hidden; /* empêche le débordement */
+   overflow:hidden; 
 }
 /* Bandeau */
 
@@ -82,6 +82,8 @@ body::before{
   color:white;
   border-radius:8px;
   cursor:pointer;
+    position:relative;
+  z-index:10;
 }
 
 /* ===== LETTRES ===== */
@@ -89,23 +91,22 @@ body::before{
 .letters{
   display:flex;
   justify-content:center;
-  gap: 4px;
-  align-items: center;
-  max-width:100%;
-  overflow:hidden;
-  flex-wrap:nowrap;
+  gap:4px;
+  align-items:center;
   direction:rtl;
-  overflow-x:visible; 
-  overflow-y:visible;
-  white-space:nowrap;
+  flex-wrap:nowrap;
+  overflow:visible;   /* IMPORTANT */
+    position:relative;
+  z-index:1;
 }
+
 
 
 .letter{
   font-family:"Amiri", serif;
   font-size:36px;          /* tu peux ajuster */
   width:40px;
-  height:59px;
+  height:65px;
 
   display:flex;
   justify-content:center;
@@ -158,10 +159,10 @@ body::before{
 @media (max-width:450px){
 
   .letter{
-    font-size:27px;
-    width:24px;
-    height:36px;
-    gap:2px;
+    font-size:30px;
+    width:26px;
+    height:40px;
+    gap:6px;
   }
 
   .play{
