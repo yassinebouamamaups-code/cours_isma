@@ -1,9 +1,11 @@
 /* ===== AUDIO ===== */
 
+const BASE_PATH = location.hostname.includes("github.io")
+  ? "/" + location.pathname.split("/")[1]   // nom du repo auto
+  : "";
+
 const audio = new Audio(
-  location.hostname.includes("github.io")
-    ? "/cours_isma/assets/audio/fatha.mp3"
-    : "../../assets/audio/fatha.mp3"
+  BASE_PATH + "/assets/audio/fatha.mp3"
 );
 let activeBand = null;
 let playToken = 0;
@@ -225,5 +227,6 @@ const base = cur.querySelector(".base").textContent.trim();
 
   playNext();
 }
+
 
 document.addEventListener("DOMContentLoaded",renderAll);
