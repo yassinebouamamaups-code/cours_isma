@@ -60,30 +60,22 @@ body::before{
 
 /* ===== BANDES ===== */
 
-/* .band{
-  background:#000;
-  color:white;
-  max-width:700px;
-  margin:25px auto;
-  padding:20px;
-  border-radius:15px;
-  display:grid;
-  grid-template-columns:1fr 60px;
-} */
 .band{
   background:#000;
   color:white;
   width:100%;
-  max-width:700px;   /* Desktop */
+  max-width:660px;   /* Desktop */
   min-width:280px;   /* Mobile mini */
   margin:20px auto;
-  padding:15px;
+  padding:14px;
   border-radius:15px;
   display:grid;
   grid-template-columns:1fr 50px;
   box-sizing:border-box;
   overflow:hidden; /* empêche le débordement */
 }
+/* Bandeau */
+
 .play{
   background:transparent;
   border:2px solid white;
@@ -97,20 +89,17 @@ body::before{
 .letters{
   display:flex;
   justify-content:center;
-  gap:12px;
-  direction:rtl;
+  gap: 10px;
   align-items: center;
   max-width:100%;
   overflow:hidden;
   flex-wrap:nowrap;
-  display:flex;
-  justify-content:center;
-  gap:12px;
   direction:rtl;
   overflow-x:visible; 
   overflow-y:visible;
   white-space:nowrap;
 }
+
 
 .letter{
   font-family:"Amiri", serif;
@@ -129,6 +118,7 @@ body::before{
 
 }
 
+
 .haraka{
   position:absolute;
   font-size:30px;
@@ -142,31 +132,27 @@ body::before{
   font-weight:bold;
 }
 /* ===== GROUPES (CADRES 3x3) ===== */
+/* Tableau */
 .table-line{
   display:flex;
-  justify-content:center;
-  gap:15px;
+  gap:10px;        /* avant: 15px */
   direction:rtl;
+  justify-content:center;
 }
 
+/* Groupes (3 par 3) */
 .group{
   background:rgba(255,255,255,0.08);
-  padding:10px 12px;
-  border-radius:10px;
+  padding:6px 8px;
   border:1px solid rgba(255,255,255,0.3);
-}
-.group{
   display:flex;
-  gap:10px;
-
-  background:rgba(255,255,255,0.08);
-  padding:10px 12px;
-
+  gap:6px;
   border-radius:10px;
-  border:1px solid rgba(255,255,255,0.3);
-
   align-items:center;
+
 }
+
+
 /* ===== MOBILE ===== */
 
 @media (max-width:450px){
