@@ -173,6 +173,7 @@ body::before{
     max-width:95%;
     padding:10px;
     grid-template-columns:1fr 40px;
+    margin: 6px auto;
   }
  .group{
     gap:3px;
