@@ -168,7 +168,7 @@ function togglePlay(id,btn){
     }
 
     const cur = letters[i];
-    const base = cur.textContent.trim();
+const base = cur.querySelector(".base").textContent.trim();
 
     cur.classList.add("active");
 
