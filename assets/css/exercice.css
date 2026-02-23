@@ -73,6 +73,8 @@ body::before{
   grid-template-columns:1fr 50px;
   box-sizing:border-box;
    overflow:hidden; 
+  align-items:center; /* centre verticalement */
+
 }
 /* Bandeau */
 
@@ -84,6 +86,16 @@ body::before{
   cursor:pointer;
     position:relative;
   z-index:10;
+
+  /* FIX TAILLE */
+  width:42px;
+  height:42px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
 }
 
 /* ===== LETTRES ===== */
