@@ -134,6 +134,7 @@ function stop(){
 
 function togglePlay(id,btn){
 
+
   // Si on reclique sur le même → pause
   if(isPlaying && activeBand === id){
     stop();
@@ -167,7 +168,7 @@ function togglePlay(id,btn){
     }
 
     const cur = letters[i];
-const base = cur.querySelector(".base").textContent;
+    const base = cur.textContent.trim();
 
     cur.classList.add("active");
 
