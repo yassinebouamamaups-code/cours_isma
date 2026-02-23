@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Exercice 7</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/exercice.css">
+
+<!-- CONFIG EXERCICE -->
+<script>
+
+/* ================= SONS ================= */
+
+const SOUNDS = {
+  "ا": { start:0.8, d:0.8 },
+  "ب": { start:1.6, d:0.8 },
+  "ت": { start:2.4, d:0.8 },
+  "ث": { start:3.2, d:1 },
+  "ج": { start:4.0, d:1 },
+  "ح": { start:4.8, d:1 },
+  "خ":{ start: 5.8, d:0.9},
+  "د":{ start: 6.6, d:1.0},
+  "ذ":{ start: 7.4, d:1.0},
+  "ر": { start:8.3, d:1.0 },
+  "ز": { start:9.2, d:1.0 },
+"س": { start: 10.0, d:1.0 },
+"ش": { start: 11.0,  d: 1.0 },
+};
+
+
+/* ================= DONNÉES ================= */
+/* 👉 Modifie les séquences comme tu veux */
+
+const DATA = {
+
+  band1: ["ش","س"],
+
+  band2: ["ش","ش","س","س","ش","س","ش","س","ش","س"],
+
+  band3: ["ر","ش","ح","د","س","ح","ر","س","ب"],
+
+  band4: ["د","ج","س","ر","ج","ش","س","ج","ب"],
+
+  band5: ["د","د","ش","ر","ح","س","ح","ر","ش"],
+
+  band6: ["ر","س","ج","ر","ش","ب","س","ر","ح"],
+
+  band7: ["د","ش","ر","س","ر","د","ش","ب","ح"],
+
+  band8: ["خ","ب","س","د","ش","ح","ب","س","ح"],
+
+  band9: ["ر","ذ","ح","ر","ز","ج","ر","ذ","ج"],
+
+  band10: ["ر","ش","د","ر","ت","س","ر","ش","خ"],
+
+  band11: ["س","ر","ش","ج","ر","س","ب","ج","ش"],
+
+  band12: ["ش","س","ر","ز","ذ","د","خ","ح","ج","ث","ت","ب","ا"]
+};
+
+</script>
+
+<script src="../../assets/js/player.js" defer></script>
+
+</head>
+<body>
+
+<div class="nav-top">
+  <a href="index.html" class="back-btn">⬅ Fatha</a>
+  <a href="../../index.html" class="home-btn">🏠 Accueil</a>
+</div>
+
+<div class="nav-ex">
+  <a href="ex6.html" class="nav-arrow">❮</a>
+  <span class="nav-title">📝 Exercice 7 </span>
+  <a href="ex8.html" class="nav-arrow">❯</a>
+</div>
+
+<!-- BANDES -->
+
+<div class="band"><div class="letters" id="band1"></div><button class="play" onclick="togglePlay('band1',this)">▶</button></div>
+<div class="band"><div class="letters" id="band2"></div><button class="play" onclick="togglePlay('band2',this)">▶</button></div>
+<div class="band"><div class="letters" id="band3"></div><button class="play" onclick="togglePlay('band3',this)">▶</button></div>
+<div class="band"><div class="letters" id="band4"></div><button class="play" onclick="togglePlay('band4',this)">▶</button></div>
+<div class="band"><div class="letters" id="band5"></div><button class="play" onclick="togglePlay('band5',this)">▶</button></div>
+<div class="band"><div class="letters" id="band6"></div><button class="play" onclick="togglePlay('band6',this)">▶</button></div>
+<div class="band"><div class="letters" id="band7"></div><button class="play" onclick="togglePlay('band7',this)">▶</button></div>
+<div class="band"><div class="letters" id="band8"></div><button class="play" onclick="togglePlay('band8',this)">▶</button></div>
+<div class="band"><div class="letters" id="band9"></div><button class="play" onclick="togglePlay('band9',this)">▶</button></div>
+<div class="band"><div class="letters" id="band10"></div><button class="play" onclick="togglePlay('band10',this)">▶</button></div>
+<div class="band"><div class="letters" id="band11"></div><button class="play" onclick="togglePlay('band11',this)">▶</button></div>
+<div class="band"><div class="letters" id="band12"></div><button class="play" onclick="togglePlay('band12',this)">▶</button></div>
+
+</body>
+</html>
