@@ -33,7 +33,7 @@ function renderLine(containerId, data){
 
   const bandNumber = parseInt(containerId.replace("band",""));
 
-  /* ===== À partir de band3 → affichage en tableau ===== */
+  /* ===== BANDES 3 → 11 : tableau 3x3 ===== */
   if(bandNumber >= 3 && bandNumber !== 12){
 
     const tableWrap = document.createElement("div");
@@ -41,12 +41,10 @@ function renderLine(containerId, data){
 
     const groups = [];
 
-    /* Découpe en groupes de 3 */
     for(let i = 0; i < data.length; i += 3){
       groups.push(data.slice(i, i + 3));
     }
 
-    /* Sens RTL */
     groups.reverse().forEach(groupData => {
 
       const groupDiv = document.createElement("div");
@@ -75,11 +73,19 @@ function renderLine(containerId, data){
     });
 
     box.appendChild(tableWrap);
-
+    return;
   }
 
-  /* ===== Bandes 1 & 2 → affichage simple ===== */
-  else{
+
+  /* ===== BAND 12 : multi-lignes ===== */
+  if(bandNumber === 12){
+
+    const wrapAll = document.createElement("div");
+    wrapAll.style.display = "flex";
+    wrapAll.style.flexWrap = "wrap";
+    wrapAll.style.justifyContent = "center";
+    wrapAll.style.direction = "rtl";
+    wrapAll.style.gap = "4px";
 
     data.slice().reverse().forEach(letter => {
 
@@ -95,11 +101,33 @@ function renderLine(containerId, data){
       haraka.textContent = "َ";
 
       wrap.append(base, haraka);
-      box.appendChild(wrap);
+      wrapAll.appendChild(wrap);
 
     });
 
+    box.appendChild(wrapAll);
+    return;
   }
+
+
+  /* ===== BAND 1 & 2 ===== */
+  data.slice().reverse().forEach(letter => {
+
+    const wrap = document.createElement("div");
+    wrap.className = "letter";
+
+    const base = document.createElement("span");
+    base.className = "base";
+    base.textContent = letter;
+
+    const haraka = document.createElement("span");
+    haraka.className = "haraka";
+    haraka.textContent = "َ";
+
+    wrap.append(base, haraka);
+    box.appendChild(wrap);
+
+  });
 
 }
 
