@@ -260,15 +260,10 @@ footer{
 
 <!-- ================= SCRIPT AUDIO ================= -->
 <script>
-/* Détection GitHub Pages */
-const IS_GITHUB = location.hostname.includes("github.io");
+/* Chemin FIXE GitHub Pages */
+const AUDIO_BASE = "/cours.ar/assets/audio/";
 
-/* Chemin audio */
-const AUDIO_BASE = IS_GITHUB
-  ? "/cours.ar/assets/audio/"   // ⚠️ Mets ici ton nom exact de repo
-  : "assets/audio/";
-
-/* Mapping */
+/* Mapping fichiers */
 const AUDIO_FILES = {
   a1: AUDIO_BASE + "Allah.mp3",
   a2: AUDIO_BASE + "anges.mp3",
@@ -289,37 +284,19 @@ function playAudio(id){
 
   const audio = document.getElementById(id);
 
-  audio.src = AUDIO_FILES[id]; // on force le bon chemin
+  audio.src = AUDIO_FILES[id];
 
-  audio.load();   // recharge
-  audio.play();   // joue
+  console.log("Lecture :", audio.src);
+
+  audio.load();
+
+  audio.play().catch(e=>{
+    console.error("Erreur audio:", e);
+  });
 
   currentAudio = audio;
 }
 </script>
-<!-- <script>
-
-/* Un seul audio à la fois */
-let currentAudio = null;
-
-function playAudio(id){
-
-  /* Stop ancien audio */
-  if(currentAudio){
-    currentAudio.pause();
-    currentAudio.currentTime = 0;
-  }
-
-  /* Nouveau */
-  const audio = document.getElementById(id);
-
-  audio.currentTime = 0;
-  audio.play();
-
-  currentAudio = audio;
-}
-
-</script> -->
 
 </body>
 </html>
