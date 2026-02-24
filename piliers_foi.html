@@ -145,7 +145,7 @@ footer{
 
   <button class="play" onclick="playAudio('a1')">🔊 Écouter</button>
 
-  <audio id="a1" src="Allah.mp3"></audio>
+<audio id="a1"></audio>
 
 </div>
 
@@ -164,7 +164,7 @@ footer{
 
   <button class="play" onclick="playAudio('a2')">🔊 Écouter</button>
 
-  <audio id="a2" src="anges.mp3"></audio>
+<audio id="a2"></audio>
 
 </div>
 
@@ -183,9 +183,12 @@ footer{
 
   <button class="play" onclick="playAudio('a3')">🔊 Écouter</button>
 
-  <audio id="a3" src="livres.mp3"></audio>
+  <audio id="a3"></audio>
 
 </div>
+
+
+
 
 
 <!-- ================= PILIER 4 ================= -->
@@ -202,7 +205,7 @@ footer{
 
   <button class="play" onclick="playAudio('a4')">🔊 Écouter</button>
 
-  <audio id="a4" src="messagers.mp3"></audio>
+<audio id="a4"></audio>
 
 </div>
 
@@ -220,9 +223,7 @@ footer{
   </div>
 
   <button class="play" onclick="playAudio('a5')">🔊 Écouter</button>
-
-  <audio id="a5" src="paradis.mp3"></audio>
-
+<audio id="a5"></audio>
 </div>
 
 
@@ -235,12 +236,12 @@ footer{
   </div>
 
   <div class="arabic">
-    الإيمان بالقدر خيره وشره
+    الإيمان بالقدر
   </div>
 
   <button class="play" onclick="playAudio('a6')">🔊 Écouter</button>
 
-  <audio id="a6" src="destin.mp3"></audio>
+<audio id="a6"></audio>
 
 </div>
 
@@ -258,8 +259,45 @@ footer{
 
 
 <!-- ================= SCRIPT AUDIO ================= -->
-
 <script>
+/* Détection GitHub Pages */
+const IS_GITHUB = location.hostname.includes("github.io");
+
+/* Chemin audio */
+const AUDIO_BASE = IS_GITHUB
+  ? "/cours.ar/assets/audio/"   // ⚠️ Mets ici ton nom exact de repo
+  : "assets/audio/";
+
+/* Mapping */
+const AUDIO_FILES = {
+  a1: AUDIO_BASE + "Allah.mp3",
+  a2: AUDIO_BASE + "anges.mp3",
+  a3: AUDIO_BASE + "livres.mp3",
+  a4: AUDIO_BASE + "messagers.mp3",
+  a5: AUDIO_BASE + "paradis.mp3",
+  a6: AUDIO_BASE + "destin.mp3"
+};
+
+let currentAudio = null;
+
+function playAudio(id){
+
+  if(currentAudio){
+    currentAudio.pause();
+    currentAudio.currentTime = 0;
+  }
+
+  const audio = document.getElementById(id);
+
+  audio.src = AUDIO_FILES[id]; // on force le bon chemin
+
+  audio.load();   // recharge
+  audio.play();   // joue
+
+  currentAudio = audio;
+}
+</script>
+<!-- <script>
 
 /* Un seul audio à la fois */
 let currentAudio = null;
@@ -281,7 +319,7 @@ function playAudio(id){
   currentAudio = audio;
 }
 
-</script>
+</script> -->
 
 </body>
 </html>
